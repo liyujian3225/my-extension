@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,  //版本清单V3
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  //action键声明扩展程序的操作图标的图像以及单击扩展程序的操作图标时在弹出窗口中显示的HTML页面。
+  "action": {
+    "default_title": "插件标题",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "commands": {
+    //_execute_action键运行与事件相同的代码action.onClicked()
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  //页面内容的脚本，内容脚本可以使用标准文档对象模型(DOM) 来读取和更改页面的内容。
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      // matches字段可以有一个或多个匹配模式。这些允许浏览器识别将内容脚本注入到哪些站点。匹配模式由三部分组成<scheme>://<host><path>。它们可以包含 ' *' 字符。
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ]
+    }
+  ],
+  //扩展程序可以使用扩展程序的 Service Worker在后台监视浏览器事件。Service Worker 是特殊的 JavaScript 环境，加载它来处理事件并在不再需要时终止。
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  //该activeTab权限授予扩展在当前活动选项卡上执行代码的临时能力。
+  "permissions": [
+    "tabs",
+    "tabGroups",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "minimum_chrome_version": "102",
+  "omnibox": {
+    "keyword": "api"
+  }
+}
