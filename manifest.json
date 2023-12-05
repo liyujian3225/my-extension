@@ -9,10 +9,7 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
-  //action键声明扩展程序的操作图标的图像以及单击扩展程序的操作图标时在弹出窗口中显示的HTML页面。
-  "action": {
-    "default_title": "插件标题",
-    "default_popup": "popup/popup.html",
+  "action": {  //action键声明扩展程序的操作图标的图像以及单击扩展程序的操作图标时在弹出窗口中显示的HTML页面。
     "default_icon": {
       "16": "images/icon-16.png",
       "32": "images/icon-32.png",
