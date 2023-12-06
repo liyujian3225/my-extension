@@ -48,7 +48,7 @@
     "tabGroups",
     "activeTab",
     "scripting",
-    "storage"
+    "storage",
   ],
   "minimum_chrome_version": "102",
   "omnibox": {
